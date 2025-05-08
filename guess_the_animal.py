@@ -75,7 +75,7 @@ if st.button("Restart Game"):
         {"role": "system", "content": "You are an AI playing 'Guess the Animal'. Ask yes/no questions to identify the animal the user is thinking of. After enough questions, you will try to guess the animal."},
         {"role": "user", "content": "Let's start. Ask your first question."}
     ]
-    st.experimental_rerun()
+#    st.experimental_rerun()
 
 st.markdown("---")
 st.info("Only respond with 'Yes', 'No', or 'Not sure' to help the AI guess correctly!")
