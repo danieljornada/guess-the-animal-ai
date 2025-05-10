@@ -18,11 +18,7 @@ if "final_guess" not in st.session_state:
 if st.button("I'm Thinking of an Animal") or st.session_state.round > 1:
     if st.session_state.round == 1:
         prompt = "You are playing 20 Questions to guess the animal someone is thinking of. Ask smart yes/no questions to narrow it down."
-        try:
-            response = model.generate_content(prompt)
-            st.write("✅ Gemini response:", response.text)
-        except Exception as e:
-            st.error(f"Gemini call failed: {e}")    
+        response = model.generate_content(prompt)
     else:
         last_response = st.session_state.history[-1]["answer"]
         full_prompt = "\n".join([f"Q: {h['question']}\nA: {h['answer']}" for h in st.session_state.history])
